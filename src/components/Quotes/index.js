@@ -46,7 +46,7 @@ const quotesArr = [
 ];
 
 function Quotes() {
-  const [newQuote, setNewQuote] = useState("");
+  const [newQuote, setNewQuote] = useState("Never give up because great things take time.");
 
   function getRandomQuote() {
     let randomQuote = quotesArr[Math.floor(Math.random() * quotesArr.length)];

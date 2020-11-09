@@ -30,15 +30,77 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      /* Create two equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 30%;
+        padding: 10px;
+        height: 500px; /* Should be removed. Only for demonstration */
+ 
+      }
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      .border {
+        float: left;
+        width: 5%;
+        padding: 10px;
+        height: 500px; /* Should be removed. Only for demonstration */
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+
+      </style>
+      </head>
+      <body>
+      <h2 style="text-align:center">Mentor Notes</h2>
+      
+      <div class="row">
+        <div class="border" style="background-color:  rgb(127, 213, 202); color: snow">
+        </div>
+
+        <div class="column" style="background-color: rgb(255, 148, 102); color:rgb(71, 63, 64)">
+          <br>
+          <form id="input-form">
+                <label>Date:</label>
+                <input type="datetime-local"></input>
+                <h4>What are you working on?</h4>
+                <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
+                <h4>What have you enjoyed?</h4>
+                <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
+                <h4>What are you struggling with?</h4>
+                <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
+                </div>
+              <div class="column" style="background-color: rgb(255, 148, 102); color:rgb(71, 63, 64)">
+                <br>
+                    <label>Week:</label>
+                    <input type="datetime-local"></input>
+                    <h4>Upcoming goals</h4>
+                    <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
+                    <h4>General career/industry advice</h4>
+                    <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
+                    <br></br>
+                    <input type="submit" value="Submit">
+              </form>
+                </div>
+            <div class="column" style="background-color: rgb(71, 63, 64); color: snow">
+              <h4>Course Schedule</h4>
+              <img height=75% src="./image.png" />
+              <p>Some text..</p>
+            </div>
+            <div class="border" style="background-color: rgb(127, 213, 202); color:rgb(71, 63, 64)">
+            </div>
+          </form>    
+      </div>
+      
   </body>
 </html>

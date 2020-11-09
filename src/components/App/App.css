@@ -38,7 +38,7 @@
 }
 
 body {
-  background-color: rgb(47, 177, 177);
+  background-color: rgb(127, 213, 202);
   /* background-image: linear-gradient(
     to left,
     rgba(255, 0, 0, 0),
@@ -46,19 +46,23 @@ body {
   ); */
 }
 
+.quotemarks {
+  color: rgb(253, 255 255);
+}
+
 .quote {
-  background-color: orange;
+  background-color: rgb(248, 193, 90);
   /* background-color: rgb(109, 76, 109); */
   font-family: "Courgette", cursive;
   text-align: center;
   /* color: snow; */
-  color: dark rgb(20, 20, 87);
+  color: dark rgb(71, 63, 64);
   text-shadow: 2px 2px rgb(168, 149, 102);
   /* text-shadow: 2px 2px rgb(120, 130, 134); */
   margin: auto;
   width: 50%;
   /* border: 5px solid snow; */
-  border: 5px solid rgb(245, 229, 185);
+  border: 5px solid rgb(255, 148, 102);
   padding: 30px;
   border-radius: 30%;
   border-style: double;

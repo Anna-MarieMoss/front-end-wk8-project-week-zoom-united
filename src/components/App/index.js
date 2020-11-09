@@ -23,6 +23,7 @@ function App() {
         >
           Inspire Me
         </button> */}
+        <br></br>
         <Quotes />
     </div>
   );
