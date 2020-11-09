@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: rgb(197, 227, 245);
+}
+
+.quote {
+  background-color: rgb(109, 76, 109);
+  font-family: "Courgette", cursive;
+  text-align: center;
+  color: snow;
+  text-shadow: 2px 2px rgb(120, 130, 134);
+  margin: auto;
+  width: 50%;
+  border: 5px solid snow;
+  padding: 30px;
+  border-radius: 25%;
+}

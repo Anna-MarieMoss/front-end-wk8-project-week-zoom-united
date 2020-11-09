@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Quotes from "../Quotes/index";
 
 function App() {
-  const [id, setId] = useState("");
+  // const [id, setId] = useState("");
 
   // function getRandomId() {
   //   let randomId = Math.floor(Math.random() * 10) + 1;
@@ -13,19 +13,17 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <p>Happy Project Week</p>
-      </header>
-      <body>
-        <button
+      </header> */}
+        {/* <button
           onClick={() => {
             getRandomId();
           }}
         >
           Inspire Me
-        </button>
+        </button> */}
         <Quotes />
-      </body>
     </div>
   );
 }
