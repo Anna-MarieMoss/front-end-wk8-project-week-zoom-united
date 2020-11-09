@@ -38,18 +38,28 @@
 }
 
 body {
-  background-color: rgb(197, 227, 245);
+  background-color: rgb(47, 177, 177);
+  /* background-image: linear-gradient(
+    to left,
+    rgba(255, 0, 0, 0),
+    rgb(197, 227, 245)
+  ); */
 }
 
 .quote {
-  background-color: rgb(109, 76, 109);
+  background-color: orange;
+  /* background-color: rgb(109, 76, 109); */
   font-family: "Courgette", cursive;
   text-align: center;
-  color: snow;
-  text-shadow: 2px 2px rgb(120, 130, 134);
+  /* color: snow; */
+  color: dark rgb(20, 20, 87);
+  text-shadow: 2px 2px rgb(168, 149, 102);
+  /* text-shadow: 2px 2px rgb(120, 130, 134); */
   margin: auto;
   width: 50%;
-  border: 5px solid snow;
+  /* border: 5px solid snow; */
+  border: 5px solid rgb(245, 229, 185);
   padding: 30px;
-  border-radius: 25%;
+  border-radius: 30%;
+  border-style: double;
 }

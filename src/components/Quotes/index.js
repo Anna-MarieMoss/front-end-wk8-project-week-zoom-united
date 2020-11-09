@@ -56,7 +56,7 @@ function Quotes() {
   }
   return (
     <div>
-      <h2 className="quote"><u>Quote</u><br></br> "{newQuote}"</h2>
+      <h2 className="quote"><u>Quote</u><br></br> "{newQuote}"<br></br></h2>
       <button
           onClick={() => {
             getRandomQuote();
