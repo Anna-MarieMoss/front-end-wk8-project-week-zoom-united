@@ -14,11 +14,28 @@ function App() {
   const [query, setQuery] = useState(null);
   const [postBody, setPostBody] = useState();
   const [formSubmit, setFormSubmit] = useState(true);
+  const [deleteId, setDeleteId] = useState(null);
 
   function getRandomId() {
     let randomId = Math.floor(Math.random() * 10) + 1;
     setId(randomId);
   }
+
+  function handleDelete(id) {
+    setDeleteId(id);
+  }
+
+  useEffect(() => {
+    async function deleteFromDB() {
+      const requestOptions = {
+        method: "DELETE",
+      };
+      console.log(requestOptions);
+      fetch(`http://localhost:5000/notes/${deleteId}`, requestOptions);
+      setDeleteId(null);
+    }
+    deleteId && deleteFromDB();
+  }, [deleteId]);
 
   function addToPost(formData) {
     const newFormData = JSON.stringify(formData);
@@ -74,7 +91,7 @@ function App() {
                   <button onClick={() => setFormSubmit(true)}>
                     Add another meeting log
                   </button>
-                  <RecentPost userHistory={userHistory} />
+                  <RecentPost postBody={postBody} />
                 </div>
               )}
             </Route>
@@ -85,6 +102,8 @@ function App() {
                 userHistory={userHistory}
                 setQuery={setQuery}
                 setUserHistory={setUserHistory}
+                handleDelete={handleDelete}
+                deleteId={deleteId}
               />
             </Route>
             <Route path="/">

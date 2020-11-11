@@ -7,7 +7,11 @@ function Filter({ setQuery }) {
   return (
     <div className="input-container">
       <h2>Please enter your Student ID Number</h2>
-      <input value={memberId} onChange={(e) => setMemberId(e.target.value)}></input>
+      <input
+        type="number"
+        value={memberId}
+        onChange={(e) => setMemberId(e.target.value)}
+      ></input>
 
       <button onClick={() => setQuery(memberId)}>click me</button>
     </div>
