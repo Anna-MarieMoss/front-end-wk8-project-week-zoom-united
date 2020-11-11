@@ -4,24 +4,36 @@ import Quotes from "../Quotes/index";
 import BootCamperRecord from "../Input/index";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "../HomePage";
-import MyHistoryPage from "../MyHistoryPage";
 import Form from "../Form";
+import RecentPost from "../Display/recent_post";
 
 function App() {
   const [id, setId] = useState("");
   const [userHistory, setUserHistory] = useState([]);
   const [query, setQuery] = useState(null);
-  // const [userId, setUserId] = useState("");
   const [postBody, setPostBody] = useState();
-  console.log(postBody);
+  const [formSubmit, setFormSubmit] = useState(true);
+
   function getRandomId() {
     let randomId = Math.floor(Math.random() * 10) + 1;
     setId(randomId);
   }
+
   function addToPost(formData) {
     const newFormData = JSON.stringify(formData);
     setPostBody(newFormData);
+    Array.from(document.querySelectorAll("input")).forEach(
+      (input) => (input.value = "")
+    );
+    Array.from(document.querySelectorAll("textarea")).forEach(
+      (input) => (input.value = "")
+    );
+    Array.from(document.querySelectorAll("select")).forEach(
+      (input) => (input.value = "default")
+    );
+    setFormSubmit(false);
   }
+
   useEffect(() => {
     async function addToDB() {
       const requestOptions = {
@@ -49,11 +61,22 @@ function App() {
         <div className="App">
           <nav className="nav-bar">
             <Link to="/">Home </Link>
-            <Link to="/agenda"> My agenda </Link>
-            <Link to="/history"> My history </Link>
+            <Link to="/agenda"> New Meeting Log </Link>
+            <Link to="/history"> My History </Link>
           </nav>
           <Switch>
-            <Route path="/agenda"></Route>
+            <Route path="/agenda">
+              {formSubmit && <Form onClickfn={addToPost} userId={query} />}
+              {formSubmit === false && (
+                <div>
+                  <h2>Congrats! Meeting notes submitted ✅</h2>
+                  <button onClick={() => setFormSubmit(true)}>
+                    Add another meeting log
+                  </button>
+                  <RecentPost userHistory={userHistory} />
+                </div>
+              )}
+            </Route>
             <Route path="/history">
               <BootCamperRecord
                 id={id}
@@ -65,7 +88,6 @@ function App() {
             </Route>
             <Route path="/">
               <HomePage />
-              <Form onClickfn={addToPost} />
             </Route>
           </Switch>
         </div>
