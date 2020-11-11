@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-function Form({ onClickfn }) {
+function Form({ onClickfn, userId }) {
   const [formData, setFormData] = useState({
-    user_id: null,
+    user_id: userId,
     name: "",
     meeting_date: null,
     summary: "",
@@ -21,12 +21,13 @@ function Form({ onClickfn }) {
     <div>
       <h2>My meeting Log</h2>
       <form>
-        <input
+        <p>User ID: {userId}</p>
+        {/* <input
           onChange={(event) => handleChange(event)}
           placeholder="user_id"
           type="number"
           name="user_id"
-        ></input>
+        ></input> */}
         <input
           onChange={(event) => handleChange(event)}
           placeholder="name"
