@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Display from "../Display/index"
+import Display from "../Display/index";
 
-function BootCamperRecord({query, userHistory, setQuery, setUserHistory}) {
+function BootCamperRecord({
+  query,
+  userHistory,
+  setQuery,
+  setUserHistory,
+  handleDelete,
+  deleteId,
+}) {
   const [note, setNote] = useState([]);
   useEffect(() => {
     async function getAllNotes() {
@@ -9,14 +16,20 @@ function BootCamperRecord({query, userHistory, setQuery, setUserHistory}) {
 
       const data = await res.json();
       const { payload } = data;
-      console.log(payload);
       setNote(payload);
     }
     getAllNotes();
   }, []);
   return (
     <div>
-      <Display query={query} userHistory={userHistory} setQuery={setQuery} setUserHistory={setUserHistory}/>
+      <Display
+        query={query}
+        userHistory={userHistory}
+        setQuery={setQuery}
+        setUserHistory={setUserHistory}
+        handleDelete={handleDelete}
+        deleteId={deleteId}
+      />
       {/* {note.map((note) => {
         return (
           <div className="notes">
