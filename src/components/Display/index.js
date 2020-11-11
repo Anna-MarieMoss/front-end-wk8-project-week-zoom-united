@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Filter from "../Filter/index"
+// import Filter from "../Filter/index"
 
 function Display({query, userHistory, setUserHistory, setQuery}){
 // const [userHistory,setUserHistory] = useState([])
@@ -21,8 +21,8 @@ useEffect(() => {
 
   return (
     <div className="user-viewer">
-      <p>display SOC Student with id {query} here!</p>
-      <Filter setQuery={setQuery} />
+      <p>Displaying Notes History for SOC Student {query}</p>
+      {/* <Filter setQuery={setQuery} /> */}
       <div>
 {userHistory.map((userHistory) => {
     return (
