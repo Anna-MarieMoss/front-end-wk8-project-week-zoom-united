@@ -6,8 +6,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "../HomePage";
 import MyHistoryPage from "../MyHistoryPage";
 
+
 function App() {
   const [id, setId] = useState("");
+  const [userHistory,setUserHistory] = useState([])
+const [query, setQuery] = useState(null)
   // const [userId, setUserId] = useState("");
   function getRandomId() {
     let randomId = Math.floor(Math.random() * 10) + 1;
@@ -15,6 +18,9 @@ function App() {
     setId(randomId);
   }
 
+
+
+  
   return (
     <div className="App">
       <Quotes id={id} />
@@ -39,8 +45,8 @@ function App() {
               <MyAagenda />
             </Route> */}
             <Route path="/history">
-              <BootCamperRecord id={id} />
-              <MyHistoryPage />
+              <BootCamperRecord id={id} query={query} userHistory={userHistory} setQuery={setQuery} setUserHistory={setUserHistory} />
+             
             </Route>
             <Route path="/">
               <HomePage />
