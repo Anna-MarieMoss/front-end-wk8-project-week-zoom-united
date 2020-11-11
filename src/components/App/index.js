@@ -62,11 +62,11 @@ function App() {
         <div className="App">
           <nav className="nav-bar">
             <Link to="/">Home </Link>
-            <Link to="/agenda"> New Meeting Log </Link>
+            <Link to="/new-meeting"> New Meeting Log </Link>
             <Link to="/history"> My History </Link>
           </nav>
           <Switch>
-            <Route path="/agenda">
+            <Route path="/new-meeting">
               {formSubmit && <Form onClickfn={addToPost} userId={query} />}
               {formSubmit === false && (
                 <div>
@@ -89,11 +89,11 @@ function App() {
             </Route>
             <Route path="/">
               <HomePage />
+              <Filter setQuery={setQuery} />
             </Route>
           </Switch>
         </div>
       </Router>
-      <Filter setQuery={setQuery} />
       <br></br>
       <br></br>
     </div>
