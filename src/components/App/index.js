@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "../HomePage";
 import Form from "../Form";
 import RecentPost from "../Display/recent_post";
+import Filter from "../Filter/index";
 
 function App() {
   const [id, setId] = useState("");
@@ -92,6 +93,9 @@ function App() {
           </Switch>
         </div>
       </Router>
+      <Filter setQuery={setQuery} />
+      <br></br>
+      <br></br>
     </div>
   );
 }
