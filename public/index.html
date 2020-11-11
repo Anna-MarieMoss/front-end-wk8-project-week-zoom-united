@@ -58,6 +58,10 @@
         clear: both;
       }
 
+      input, textarea {
+        width: 100%;
+      }
+
 
       </style>
       </head>
@@ -72,34 +76,39 @@
           <br>
           <form id="input-form">
                 <label>Date:</label>
-                <input type="datetime-local"></input>
+                <input type="datetime-local" name="date"></input>
+
                 <h4>What are you working on?</h4>
-                <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
+                <textarea rows="4" cols="30" name="summary" form="input-form"></textarea>
+                
                 <h4>What have you enjoyed?</h4>
-                <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
+                <textarea rows="4" cols="30" name="wins" form="input-form"></textarea>
+                
                 <h4>What are you struggling with?</h4>
-                <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
-                </div>
-              <div class="column" style="background-color: rgb(255, 148, 102); color:rgb(71, 63, 64)">
+                <textarea rows="4" cols="30" name="challenge" form="input-form"></textarea>
+        </div>
+              
+        <div class="column" style="background-color: rgb(255, 148, 102); color:rgb(71, 63, 64)">
                 <br>
-                    <label>Week:</label>
-                    <input type="datetime-local"></input>
-                    <h4>Upcoming goals</h4>
-                    <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
-                    <h4>General career/industry advice</h4>
-                    <textarea rows="4" cols="30" name="comment" form="input-form"></textarea>
-                    <br></br>
-                    <input type="submit" value="Submit">
-              </form>
-                </div>
-            <div class="column" style="background-color: rgb(71, 63, 64); color: snow">
+                <label>Week:</label>
+                <input type="datetime-local"></input>
+                
+                <h4>Upcoming goals</h4>
+                <textarea rows="4" cols="30" name="goals" form="input-form"></textarea>
+                
+                <h4>General career/industry advice</h4>
+                <textarea rows="4" cols="30" name="aspiration" form="input-form"></textarea>
+                <br></br>
+                <input type="submit" value="Submit">
+          </form>
+        </div>
+        <div class="column" style="background-color: rgb(71, 63, 64); color: snow">
               <h4>Course Schedule</h4>
               <img height=75% src="./image.png" />
               <p>Some text..</p>
-            </div>
-            <div class="border" style="background-color: rgb(127, 213, 202); color:rgb(71, 63, 64)">
-            </div>
-          </form>    
+        </div>
+        <div class="border" style="background-color: rgb(127, 213, 202); color:rgb(71, 63, 64)">
+        </div>
       </div>
       
   </body>
