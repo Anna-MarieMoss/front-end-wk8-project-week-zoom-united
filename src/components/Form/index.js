@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import InputField from "./InputField";
-import Select from "./Select";
-import TextAreaField from "./TextareaField";
+
 function Form({ onClickfn }) {
   const [formData, setFormData] = useState({
     user_id: null,
