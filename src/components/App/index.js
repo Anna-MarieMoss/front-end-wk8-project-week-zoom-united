@@ -1,26 +1,39 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Quotes from "../Quotes/index";
 import BootCamperRecord from "../Input/index";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "../HomePage";
 import MyHistoryPage from "../MyHistoryPage";
-
+import Form from "../Form";
 
 function App() {
   const [id, setId] = useState("");
-  const [userHistory,setUserHistory] = useState([])
-const [query, setQuery] = useState(null)
+  const [userHistory, setUserHistory] = useState([]);
+  const [query, setQuery] = useState(null);
   // const [userId, setUserId] = useState("");
+  const [postBody, setPostBody] = useState();
+  console.log(postBody);
   function getRandomId() {
     let randomId = Math.floor(Math.random() * 10) + 1;
-    console.log(randomId);
     setId(randomId);
   }
+  function addToPost(formData) {
+    const newFormData = JSON.stringify(formData);
+    setPostBody(newFormData);
+  }
+  useEffect(() => {
+    async function addToDB() {
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: postBody,
+      };
+      fetch(`http://localhost:5000/notes/`, requestOptions);
+    }
+    postBody && addToDB();
+  }, [postBody]);
 
-
-
-  
   return (
     <div className="App">
       <Quotes id={id} />
@@ -36,20 +49,23 @@ const [query, setQuery] = useState(null)
         <div className="App">
           <nav className="nav-bar">
             <Link to="/">Home </Link>
-            <span></span>
-            {/* <Link to="/agenda"> My agenda </Link> */}
+            <Link to="/agenda"> My agenda </Link>
             <Link to="/history"> My history </Link>
           </nav>
           <Switch>
-            {/* <Route path="/agenda">
-              <MyAagenda />
-            </Route> */}
+            <Route path="/agenda"></Route>
             <Route path="/history">
-              <BootCamperRecord id={id} query={query} userHistory={userHistory} setQuery={setQuery} setUserHistory={setUserHistory} />
-             
+              <BootCamperRecord
+                id={id}
+                query={query}
+                userHistory={userHistory}
+                setQuery={setQuery}
+                setUserHistory={setUserHistory}
+              />
             </Route>
             <Route path="/">
               <HomePage />
+              <Form onClickfn={addToPost} />
             </Route>
           </Switch>
         </div>
