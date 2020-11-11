@@ -9,6 +9,9 @@ import Form from "../Form";
 
 function App() {
   const [id, setId] = useState("");
+  const [userHistory, setUserHistory] = useState([]);
+  const [query, setQuery] = useState(null);
+  // const [userId, setUserId] = useState("");
   const [postBody, setPostBody] = useState();
   console.log(postBody);
   function getRandomId() {
@@ -52,8 +55,13 @@ function App() {
           <Switch>
             <Route path="/agenda"></Route>
             <Route path="/history">
-              <BootCamperRecord id={id} />
-              <MyHistoryPage />
+              <BootCamperRecord
+                id={id}
+                query={query}
+                userHistory={userHistory}
+                setQuery={setQuery}
+                setUserHistory={setUserHistory}
+              />
             </Route>
             <Route path="/">
               <HomePage />
