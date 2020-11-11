@@ -17,7 +17,7 @@ function BootCamperRecord({query, userHistory, setQuery, setUserHistory}) {
   return (
     <div>
       <Display query={query} userHistory={userHistory} setQuery={setQuery} setUserHistory={setUserHistory}/>
-      {note.map((note) => {
+      {/* {note.map((note) => {
         return (
           <div className="notes">
             <div className="row">
@@ -54,7 +54,7 @@ function BootCamperRecord({query, userHistory, setQuery, setUserHistory}) {
             </div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }
