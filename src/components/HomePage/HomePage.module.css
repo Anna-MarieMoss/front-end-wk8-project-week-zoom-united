@@ -1,0 +1,15 @@
+.main {
+  overflow: auto;
+  min-height: 50vh;
+  background-image: radial-gradient(hotpink, rgb(0, 174, 255));
+  color: whitesmoke;
+}
+.heading {
+  padding-left: 10vw;
+}
+.section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2em;
+}

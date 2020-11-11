@@ -53,3 +53,32 @@ body {
   padding: 30px;
   border-radius: 25%;
 }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+  width: 50%;
+}
+.notes {
+  background-color: turquoise;
+  font-family: Georgia, "Times New Roman", Times, serif, cursive;
+  text-align: center;
+  color: rgb(15, 15, 15);
+  margin: auto;
+  width: 50%;
+  border: 5px solid snow;
+  padding: 30px;
+  border-radius: 25%;
+}
+.nav-bar {
+  margin: 5px;
+}
+
+.button:hover {
+  background-color: rgb(238, 9, 85);
+  color: turquoise;
+}

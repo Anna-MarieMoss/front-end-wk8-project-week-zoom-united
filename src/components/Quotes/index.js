@@ -8,7 +8,6 @@ function Quotes({ id }) {
       const res = await fetch(`http://localhost:5000/quotes/${id}`);
       const data = await res.json();
       const { payload } = data;
-      console.log(payload.quote);
       setNewQuote(payload[0].quote);
     }
     getRandomQuote();
