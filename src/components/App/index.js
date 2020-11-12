@@ -15,6 +15,8 @@ function App() {
   const [postBody, setPostBody] = useState();
   const [formSubmit, setFormSubmit] = useState(true);
   const [deleteId, setDeleteId] = useState(null);
+  const [userIdSubmit, setUserIdSubmit] = useState(true);
+  const [name, setName] = useState("");
   const [dateFilter, setDateFilter] = useState(null);
   const [isDateFilter, setIsDateFilter] = useState(false);
 
@@ -31,6 +33,10 @@ function App() {
   function getRandomId() {
     let randomId = Math.floor(Math.random() * 10) + 1;
     setId(randomId);
+  }
+
+  function welcomeMessage() {
+    setUserIdSubmit(false);
   }
 
   function handleDelete(id) {
@@ -125,7 +131,22 @@ function App() {
             </Route>
             <Route path="/">
               <HomePage />
-              <Filter setQuery={setQuery} />
+              {userIdSubmit && (
+                <Filter
+                  setQuery={setQuery}
+                  userIdSubmit={welcomeMessage}
+                  name={name}
+                  setName={setName}
+                />
+              )}
+              {userIdSubmit === false && (
+                <div>
+                  <h2>Welcome {name} to your meeting log ✅</h2>
+                  <button onClick={() => setUserIdSubmit(true)}>
+                    Sign out
+                  </button>
+                </div>
+              )}
             </Route>
           </Switch>
           {/* <nav className="nav-bar">

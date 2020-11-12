@@ -24,6 +24,7 @@ function BootCamperRecord({
     }
     getAllNotes();
   }, []);
+
   return (
     <div>
       <Display
