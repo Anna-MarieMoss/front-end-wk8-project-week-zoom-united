@@ -7,6 +7,7 @@ function Filter({ setQuery }) {
   return (
     <div className="input-container">
       <h2>Please enter your Student ID Number</h2>
+      <br></br>
       <input
         type="number"
         value={memberId}

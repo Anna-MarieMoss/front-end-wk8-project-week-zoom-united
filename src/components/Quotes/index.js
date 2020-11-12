@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 function Quotes({ id }) {
   const [newQuote, setNewQuote] = useState({ quote: { data: "" } });
 
@@ -14,11 +15,11 @@ function Quotes({ id }) {
   }, [id]);
 
   return (
-    <div>
-      <h2 className="quote">
-        <u>Quote</u>
-        <br></br> {JSON.stringify(newQuote)}
-      </h2>
+    <div className="quote">
+      {/* <h2 > */}
+        {/* <u>Quote</u> */}
+      <h3>{JSON.stringify(newQuote)}</h3> 
+      {/* </h2> */}
     </div>
   );
 }

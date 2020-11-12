@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import css from "../App/App.css"
 // import Filter from "../Filter/index"
 
 function Display({
@@ -31,38 +32,53 @@ function Display({
       <div>
         {userHistory.map((userHistory) => {
           return (
-            <div className="notes">
+            <div className="notes inner">
               <div className="row">
-                <h4>Name: {JSON.stringify(userHistory.name)}</h4>
+                <h2>Name: {JSON.stringify(userHistory.name)}</h2>
+                <br></br>
                 <p className="column">
                   <b>Date: </b>
                   {JSON.stringify(userHistory.meeting_date)}
                 </p>
                 <p className="column">
-                  <b>Week:</b> {JSON.stringify(userHistory.week_topic)}
+                  <b>Week:</b>
+                   {JSON.stringify(userHistory.week_topic)}
                 </p>
               </div>
               <div className="row">
+              <br></br>
                 <p>
-                  <b>What are you working on?</b>{" "}
+                  <h2>What are you working on?</h2>
+                  <br></br>
+                  {" "}
                   {JSON.stringify(userHistory.summary)}
                 </p>
-
+                <br></br>
                 <p className="column">
-                  <b>What have you enjoyed?</b>{" "}
+                  <h2>What have you enjoyed?</h2>
+                  <br></br>
+                  {" "}
                   {JSON.stringify(userHistory.wins)}
                 </p>
+                <br></br>
                 <p className="column">
-                  <b>What are you struggling with?</b>{" "}
+                  <h2>What are you struggling with?</h2>
+                  <br></br>
+                  {" "}
                   {JSON.stringify(userHistory.challenges)}
                 </p>
               </div>
               <div className="row">
+              <br></br>
                 <p className="column">
-                  <b>Upcoming goals:</b> {JSON.stringify(userHistory.goals)}
+                  <h2>Upcoming goals:</h2> 
+                  <br></br>
+                  {JSON.stringify(userHistory.goals)}
                 </p>
+                <br></br>
                 <p className="column">
-                  <b>General career/industry advice:</b>
+                  <h2>General career/industry advice:</h2>
+                  <br></br>
                   {JSON.stringify(userHistory.aspirations)}
                 </p>
               </div>
