@@ -12,6 +12,7 @@ function BootCamperRecord({
   dateFilter,
   isDateFilter,
   removeDateFilter,
+  name,
 }) {
   const [note, setNote] = useState([]);
   useEffect(() => {
@@ -38,6 +39,7 @@ function BootCamperRecord({
         dateFilter={dateFilter}
         isDateFilter={isDateFilter}
         removeDateFilter={removeDateFilter}
+        name={name}
       />
       {/* {note.map((note) => {
         return (

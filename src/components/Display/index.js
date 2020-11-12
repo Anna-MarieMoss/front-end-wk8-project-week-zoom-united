@@ -16,6 +16,7 @@ function Display({
   dateFilter,
   isDateFilter,
   removeDateFilter,
+  name,
 }) {
   // const [userHistory,setUserHistory] = useState([])
   // const [query, setQuery] = useState(null)
@@ -47,7 +48,9 @@ function Display({
   return (
     <div className="user-viewer">
       <a id="top"></a>
-      <h2>Notes History for SOC Student {query}</h2>
+      <h2>
+        Notes History for {name} {query}
+      </h2>
       {/* <Filter setQuery={setQuery} /> */}
       {isDateFilter === false && (
         <div>
