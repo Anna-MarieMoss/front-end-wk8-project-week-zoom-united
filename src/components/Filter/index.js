@@ -27,7 +27,7 @@ function Filter({ setQuery, userIdSubmit, name, setName }) {
         <h2>Please enter your login details</h2>
         <br></br>
         <input
-          style={{ align: "center" }}
+          style={{ width: "50%" }}
           class="form-control-homepage"
           placeholder="Student ID No."
           maxLength={4}
@@ -36,6 +36,7 @@ function Filter({ setQuery, userIdSubmit, name, setName }) {
         ></input>
         <br></br>
         <input
+          style={{ width: "50%" }}
           class="form-control-homepage"
           onKeyPress={handleKeyPress}
           placeholder="Full Name"

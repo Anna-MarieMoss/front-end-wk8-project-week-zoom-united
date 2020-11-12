@@ -270,6 +270,8 @@ form {
   background-color: #fff;
   display: flex;
   align-items: center;
+  position: relative;
+  margin: 0 auto;
 }
 
 .form-control2 {
