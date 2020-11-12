@@ -47,19 +47,23 @@ function Display({
   return (
     <div className="user-viewer">
          <a id="top"></a>
-      <p>Displaying Notes History for SOC Student {query}</p>
+      <h2>Notes History for SOC Student {query}</h2>
       {/* <Filter setQuery={setQuery} /> */}
       {isDateFilter === false && (
         <div>
+        <br></br>
           <DateFilter filterHistoryDate={filterHistoryDate} />
-          <p>Showing all notes ☑️</p>
+          <br></br>
+          <h2>Showing all notes ☑️</h2>
         </div>
       )}
       {isDateFilter && (
         <div>
-          <p>
+        <br></br>
+          <h2>
             Showing all notes since {moment(dateFilter).format("YYYY-MM-DD")} 📅
-          </p>
+          </h2>
+          <br></br>
           <button onClick={() => removeDateFilter()}>Remove Filter</button>
         </div>
       )}

@@ -84,6 +84,30 @@ function App() {
 
   return (
     <div className="App">
+      {/* <Quotes id={id} />
+      <button
+        className="button"
+        onClick={() => {
+          getRandomId();
+        }}
+      >
+        Inspire Me
+      </button>
+      <br></br> */}
+      <Router className="link-header">
+        <div style={{width:"100%"}} className="App nav-bar">
+          <nav>
+
+          <ul>
+            <li><Link style={{color: "#333"}} to="/">Home </Link></li>
+            <li><Link style={{color: "#333"}} to="/new-meeting"> New Meeting Log </Link></li>
+            <li><Link style={{color: "#333"}} to="/history"> My History </Link></li>
+            <li onClick={() => setUserIdSubmit(true)}><a href="#top" style={{color: "#333", align:"right"}}>Sign Out</a></li>
+          </ul>
+
+          </nav>
+          </div>
+          <div>
       <Quotes id={id} />
       <button
         className="button"
@@ -94,13 +118,6 @@ function App() {
         Inspire Me
       </button>
       <br></br>
-      <Router className="link-header">
-        <div className="App">
-          <nav className="nav-bar">
-            <Link to="/">Home </Link>
-            <Link to="/new-meeting"> New Meeting Log </Link>
-            <Link to="/history"> My History </Link>
-          </nav>
           <Switch>
             <Route path="/new-meeting">
               {formSubmit && <Form onClickfn={addToPost} userId={query} />}
