@@ -8,7 +8,6 @@ import Form from "../Form";
 import RecentPost from "../Display/recent_post";
 import Filter from "../Filter/index";
 
-
 function App() {
   const [id, setId] = useState("");
   const [userHistory, setUserHistory] = useState([]);
@@ -24,9 +23,9 @@ function App() {
     setId(randomId);
   }
 
-function welcomeMessage(){
-  setUserIdSubmit(false)
-}
+  function welcomeMessage() {
+    setUserIdSubmit(false);
+  }
 
   function handleDelete(id) {
     setDeleteId(id);
@@ -70,8 +69,6 @@ function welcomeMessage(){
     }
     postBody && addToDB();
   }, [postBody]);
-
-  
 
   return (
     <div className="App">
@@ -118,17 +115,22 @@ function welcomeMessage(){
             </Route>
             <Route path="/">
               <HomePage />
-              {userIdSubmit && < Filter setQuery={setQuery} userIdSubmit={welcomeMessage} name={name} setName={setName}/>}
+              {userIdSubmit && (
+                <Filter
+                  setQuery={setQuery}
+                  userIdSubmit={welcomeMessage}
+                  name={name}
+                  setName={setName}
+                />
+              )}
               {userIdSubmit === false && (
                 <div>
                   <h2>Welcome {name} to your meeting log ✅</h2>
                   <button onClick={() => setUserIdSubmit(true)}>
                     Sign out
                   </button>
-                
-                  </div>)
-
-}
+                </div>
+              )}
             </Route>
           </Switch>
           {/* <nav className="nav-bar">
