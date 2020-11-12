@@ -1,35 +1,59 @@
-import React, { Component } from "react";
-import BigCalendar from "react-big-calendar";
-import moment from "moment";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import "./BookingCalendar.css";
-import NewBookingButton from "./NewBookingButton";
+import * as React from "react";
+import Paper from "@material-ui/core/Paper";
+import {
+  ViewState,
+  EditingState,
+  IntegratedEditing,
+} from "@devexpress/dx-react-scheduler";
+import {
+  Scheduler,
+  WeekView,
+  Appointments,
+  AppointmentForm,
+  AppointmentTooltip,
+  ConfirmationDialog,
+} from "@devexpress/dx-react-scheduler-material-ui";
 
-const localizer = BigCalendar.momentLocalizer(moment);
-
-export default class BookingCalendar extends Component {
-  setDates = () => {
-    const events = [];
-    this.props.events.map((event) => {
-      return events.push({
-        start: new Date(event.start),
-        end: new Date(event.end),
-        title: `${event.pet_name} Stay (Human: ${event.human_name})`,
-        allDay: true,
-      });
-    });
-    return events;
-  };
-  render() {
-    return (
-      <div className="calendar-container">
-        <BigCalendar
-          localizer={localizer}
-          events={this.setDates()}
-          startAccessor="start"
-          endAccessor="end"
-        />
-      </div>
-    );
-  }
+const currentDate = "2020-11-11";
+const schedulerData = [
+  {
+    startDate: "2020-11-09T12:00",
+    endDate: "2020-11-09T17:00",
+    title: "Planning",
+  },
+  {
+    startDate: "2020-11-10T09:00",
+    endDate: "2020-11-10T16:30",
+    title: "Coding",
+  },
+  {
+    startDate: "2020-11-11T09:45",
+    endDate: "2020-11-11T16:00",
+    title: "Coding",
+  },
+  {
+    startDate: "2020-11-12T09:00",
+    endDate: "2020-11-12T16:30",
+    title: "Preparing presentation",
+  },
+  {
+    startDate: "2020-11-13T13:00",
+    endDate: "2020-11-13T16:30",
+    title: "Presenting",
+  },
+];
+function Calendar() {
+  return (
+    <div>
+      <Paper>
+        <Scheduler data={schedulerData}>
+          <ViewState currentDate={currentDate} />
+          <WeekView startDayHour={9} endDayHour={17} />
+          <Appointments />
+        </Scheduler>
+      </Paper>
+      ;
+    </div>
+  );
 }
+export default Calendar;
