@@ -8,6 +8,10 @@ function BootCamperRecord({
   setUserHistory,
   handleDelete,
   deleteId,
+  filterHistoryDate,
+  dateFilter,
+  isDateFilter,
+  removeDateFilter,
 }) {
   const [note, setNote] = useState([]);
   useEffect(() => {
@@ -29,6 +33,10 @@ function BootCamperRecord({
         setUserHistory={setUserHistory}
         handleDelete={handleDelete}
         deleteId={deleteId}
+        filterHistoryDate={filterHistoryDate}
+        dateFilter={dateFilter}
+        isDateFilter={isDateFilter}
+        removeDateFilter={removeDateFilter}
       />
       {/* {note.map((note) => {
         return (

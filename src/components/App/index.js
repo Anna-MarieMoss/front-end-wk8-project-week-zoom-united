@@ -8,7 +8,6 @@ import Form from "../Form";
 import RecentPost from "../Display/recent_post";
 import Filter from "../Filter/index";
 
-
 function App() {
   const [id, setId] = useState("");
   const [userHistory, setUserHistory] = useState([]);
@@ -16,6 +15,18 @@ function App() {
   const [postBody, setPostBody] = useState();
   const [formSubmit, setFormSubmit] = useState(true);
   const [deleteId, setDeleteId] = useState(null);
+  const [dateFilter, setDateFilter] = useState(null);
+  const [isDateFilter, setIsDateFilter] = useState(false);
+
+  function removeDateFilter() {
+    setIsDateFilter(false);
+    setDateFilter("1970-01-01");
+  }
+
+  function filterHistoryDate(date) {
+    setDateFilter(date);
+    setIsDateFilter(true);
+  }
 
   function getRandomId() {
     let randomId = Math.floor(Math.random() * 10) + 1;
@@ -106,6 +117,10 @@ function App() {
                 setUserHistory={setUserHistory}
                 handleDelete={handleDelete}
                 deleteId={deleteId}
+                filterHistoryDate={filterHistoryDate}
+                dateFilter={dateFilter}
+                isDateFilter={isDateFilter}
+                removeDateFilter={removeDateFilter}
               />
             </Route>
             <Route path="/">

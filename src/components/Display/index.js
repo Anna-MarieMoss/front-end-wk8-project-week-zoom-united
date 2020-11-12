@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App/App.css";
+import DateFilter from "./dateFilter";
 
 // import Filter from "../Filter/index"
 const moment = require("moment");
@@ -11,6 +12,10 @@ function Display({
   setQuery,
   handleDelete,
   deleteId,
+  filterHistoryDate,
+  dateFilter,
+  isDateFilter,
+  removeDateFilter,
 }) {
   // const [userHistory,setUserHistory] = useState([])
   // const [query, setQuery] = useState(null)
@@ -27,14 +32,40 @@ function Display({
     getUser();
   }, [query, deleteId]);
 
+  useEffect(() => {
+    async function getUserDate() {
+      const res = await fetch(
+        `http://localhost:5000/notes/${query}?date=${dateFilter}`
+      );
+      const data = await res.json();
+      const { payload } = data;
+      setUserHistory(payload);
+    }
+    dateFilter && getUserDate();
+  }, [dateFilter]);
+
   return (
     <div className="user-viewer">
       <p>Displaying Notes History for SOC Student {query}</p>
       {/* <Filter setQuery={setQuery} /> */}
+      {isDateFilter === false && (
+        <div>
+          <DateFilter filterHistoryDate={filterHistoryDate} />
+          <p>Showing all notes ☑️</p>
+        </div>
+      )}
+      {isDateFilter && (
+        <div>
+          <p>
+            Showing all notes since {moment(dateFilter).format("YYYY-MM-DD")} 📅
+          </p>
+          <button onClick={() => removeDateFilter()}>Remove Filter</button>
+        </div>
+      )}
       <div>
         {userHistory.map((userHistory) => {
           return (
-            <div className="notes inner">
+            <div key={userHistory.id} className="notes inner">
               <div className="row">
                 <h2>Name: {userHistory.name}</h2>
                 <br></br>
