@@ -39,7 +39,7 @@
 
 body {
   background-image: url("../images/getty_506616358_314511.jpg");
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-size: 100%;
   background-attachment: fixed;
 }

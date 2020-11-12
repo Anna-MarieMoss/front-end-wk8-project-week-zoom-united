@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import css from "../App/App.css";
+import "../App/App.css";
+
 // import Filter from "../Filter/index"
 const moment = require("moment");
 
