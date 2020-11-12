@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "../App/App.css"
+import "../App/App.css";
 
-function Form({ onClickfn, userId }) {
+function Form({ onClickfn, userId, name }) {
   const [formData, setFormData] = useState({
     user_id: userId,
-    name: "",
+    name: name,
     meeting_date: null,
     summary: "",
     challenges: "",
@@ -21,89 +21,117 @@ function Form({ onClickfn, userId }) {
     setFormData({ ...formData, [name]: value });
   }
   return (
-    
     <div className="notes inner">
-      <h2>My Meeting Log</h2>
-      <h2>User ID: {userId}</h2>
+      <h2>My Mentor Meeting Log</h2>
       <br></br>
       <form>
-      <div class="form-group">
-				<div class="form-wrapper">
-  
+        <div class="form-group">
+          <div class="form-wrapper">
+            <h4>User ID: {userId}</h4>
+            <h4>Name: {name}</h4>
+            <br></br>
             {/* <input
               onChange={(event) => handleChange(event)}
               placeholder="user_id"
               type="number"
               name="user_id"
             ></input> */}
-            <input class="form-control" 
+            {/* <input
+              class="form-control"
               onChange={(event) => handleChange(event)}
               placeholder="name"
               type="text"
               name="name"
-            ></input>
-            <input class="form-control"
+            ></input> */}
+            <label htmlFor="meeting_date">Select meeting date</label>
+            <input
+              class="form-control"
               onChange={(event) => handleChange(event)}
               placeholder="meeting_date"
               type="date"
               name="meeting_date"
             ></input>
-            <label htmlFor="week_topic">Choose a week:</label>
-            <select class="form-control"
+            <br></br>
+            <label htmlFor="week_topic">Select the SoC week</label>
+            <select
+              class="form-control"
               id="week_topic"
               name="week_topic"
               onChange={(event) => handleChange(event)}
             >
               <option value="default">Select</option>
               <option value="Week 2 - Intro JS">Week 2 - Intro JS</option>
-              <option value="Week 3 - Node Express">Week 3 - Node Express</option>
+              <option value="Week 3 - Node Express">
+                Week 3 - Node Express
+              </option>
               <option value="Week 4 - Databases APIs">
                 Week 4 - Databases APIs
               </option>
               <option value="Week 5 - OOP">Week 5 - OOP</option>
-              <option value="Week 6 - React Basics">Week 6 - React Basics</option>
+              <option value="Week 6 - React Basics">
+                Week 6 - React Basics
+              </option>
               <option value="Week 7 - Advanced React">
                 Week 7 - Advanced React
               </option>
             </select>
           </div>
-          <div> 
-                   
-          <textarea  class="form-control2" rows="4" cols="60"
+          <div>
+            <textarea
+              class="form-control2"
+              rows="4"
+              cols="60"
               onChange={(event) => handleChange(event)}
-              placeholder="summary"
+              placeholder="What has been covered this week?"
               type="text"
               name="summary"
             ></textarea>
-
-            <textarea class="form-control2" rows="4" cols="60"
+            <br></br>
+            <textarea
+              class="form-control2"
+              rows="4"
+              cols="60"
               onChange={(event) => handleChange(event)}
-              placeholder="challenges"
+              placeholder="What problems have you faced?"
               type="text"
               name="challenges"
             ></textarea>
+            <br></br>
 
-            <textarea class="form-control2" rows="4" cols="60"
+            <textarea
+              class="form-control2"
+              rows="4"
+              cols="60"
               onChange={(event) => handleChange(event)}
-              placeholder="wins"
+              placeholder="Share some of your wins from this week"
               type="text"
               name="wins"
             ></textarea>
-            <textarea class="form-control2" rows="4" cols="60"
+            <br></br>
+
+            <textarea
+              class="form-control2"
+              rows="4"
+              cols="60"
               onChange={(event) => handleChange(event)}
-              placeholder="goals"
+              placeholder="Set some goals for the week upcoming"
               type="text"
               name="goals"
             ></textarea>
-            <textarea class="form-control2" rows="4" cols="60"
+            <br></br>
+
+            <textarea
+              class="form-control2"
+              rows="4"
+              cols="60"
               onChange={(event) => handleChange(event)}
-              placeholder="aspirations"
+              placeholder="Set some long term aspirations for the weeks ahead"
               type="text"
               name="aspirations"
             ></textarea>
-
+            <br></br>
+          </div>
         </div>
-       </div>     
       </form>
       <button type="submit" onClick={() => onClickfn(formData)}>
         Submit
