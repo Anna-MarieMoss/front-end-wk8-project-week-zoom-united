@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 function DateFilter({ filterHistoryDate }) {
   return (
     <div>
-      <p>Filter by Date</p>
+      <h2>Filter by Date</h2>
       <input
         type="date"
         onChange={(event) => filterHistoryDate(event.target.value)}

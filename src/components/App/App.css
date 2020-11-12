@@ -79,7 +79,8 @@ body {
   border-radius: 3%;
 }
 .nav-bar {
-  margin: 15px;
+  background-color: snow;
+  border: 1px solid rgb(120, 130, 134);
 }
 
 /* .button:hover {
@@ -89,6 +90,34 @@ body {
 .navbar-nav > li {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(235, 173, 235);
+}
+
+.active {
+  background-color: #4caf50;
 }
 
 /* //////////////////////// */
@@ -145,6 +174,9 @@ img {
 ul {
   padding-left: 0;
   margin-bottom: 0;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: snow;
 }
 
 a:hover {
@@ -294,6 +326,10 @@ button:hover:before {
   transform: scaleX(1);
   -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+button:active {
+  transform: translateY(2px);
 }
 
 .checkbox {
