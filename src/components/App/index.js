@@ -7,6 +7,7 @@ import HomePage from "../HomePage";
 import Form from "../Form";
 import RecentPost from "../Display/recent_post";
 import Filter from "../Filter/index";
+// import Calendar from "../Calendar";
 
 function App() {
   const [id, setId] = useState("");
@@ -140,13 +141,48 @@ function App() {
                 />
               )}
               {userIdSubmit === false && (
-                <div>
-                  <h2>Welcome {name} to your meeting log ✅</h2>
+                <div className="notes inner">
+                  <h1>Welcome {name} to your meeting log ✅</h1>
+                  <br></br>
+                  <h2>We want your feedback about everything!</h2>
+                  <br></br>
+                  <p style={{ fontSize: "15px" }}>
+                    In order to get started, you can log the meeting details in
+                    the "New Meeting Log" section. You can also view your past
+                    meeting notes in the "My History" section.
+                  </p>
+                  <div>
+                    <Link to="/new-meeting">
+                      <button
+                        id="links"
+                        style={{
+                          display: "inline-block",
+                          fontSize: "10px",
+                          backgroundColor: "rgb(120, 130, 134)",
+                        }}
+                      >
+                        New Meeting Log
+                      </button>
+                    </Link>
+                    <Link to="/history">
+                      <button
+                        id="links"
+                        style={{
+                          display: "inline-block",
+                          fontSize: "10px",
+                          backgroundColor: "rgb(120, 130, 134)",
+                        }}
+                      >
+                        My History
+                      </button>
+                    </Link>
+                  </div>
                   <button onClick={() => setUserIdSubmit(true)}>
                     Sign out
                   </button>
                 </div>
               )}
+              {/* <Calendar /> */}
             </Route>
           </Switch>
           {/* <nav className="nav-bar">
