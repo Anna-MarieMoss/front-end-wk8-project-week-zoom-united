@@ -6,11 +6,12 @@ function DateFilter({ filterHistoryDate }) {
   console.log(date);
 
   return (
-    <div>
+    <div className="input-container">
+    <div className="notes inner2">
       <h2>Filter by Date</h2>
       <br></br>
       <span>
-        <input
+        <input style={{width: "300px", align: "center"}} className="form-control-homepage"
           type="date"
           onChange={(event) => setDate(event.target.value)}
           placeholder="filter"
@@ -30,6 +31,7 @@ function DateFilter({ filterHistoryDate }) {
           Filter
         </button>
       </span>
+    </div>
     </div>
   );
 }

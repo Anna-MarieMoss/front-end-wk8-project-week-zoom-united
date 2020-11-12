@@ -55,6 +55,7 @@ function Display({
           <DateFilter filterHistoryDate={filterHistoryDate} />
           <br></br>
           <h2>Showing all notes ☑️</h2>
+          <br></br>
         </div>
       )}
       {isDateFilter && (
