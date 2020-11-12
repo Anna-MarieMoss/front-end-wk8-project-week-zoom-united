@@ -17,6 +17,18 @@ function App() {
   const [deleteId, setDeleteId] = useState(null);
   const [userIdSubmit, setUserIdSubmit] = useState(true);
   const [name, setName] = useState("");
+  const [dateFilter, setDateFilter] = useState(null);
+  const [isDateFilter, setIsDateFilter] = useState(false);
+
+  function removeDateFilter() {
+    setIsDateFilter(false);
+    setDateFilter("1970-01-01");
+  }
+
+  function filterHistoryDate(date) {
+    setDateFilter(date);
+    setIsDateFilter(true);
+  }
 
   function getRandomId() {
     let randomId = Math.floor(Math.random() * 10) + 1;
@@ -111,6 +123,10 @@ function App() {
                 setUserHistory={setUserHistory}
                 handleDelete={handleDelete}
                 deleteId={deleteId}
+                filterHistoryDate={filterHistoryDate}
+                dateFilter={dateFilter}
+                isDateFilter={isDateFilter}
+                removeDateFilter={removeDateFilter}
               />
             </Route>
             <Route path="/">
