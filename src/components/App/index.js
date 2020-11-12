@@ -185,15 +185,18 @@ function App() {
               )}
               {userIdSubmit === false && (
                 <div className="notes inner">
-                  <h1>Welcome {name} to your meeting log ✅</h1>
+                  <h1>Welcome to your Meeting Log 📝</h1>
+                  <h2>{name}</h2>
                   <br></br>
-                  <h2>We want your feedback about everything!</h2>
+                  <h2>Your homepage for reflection...</h2>
                   <br></br>
                   <p style={{ fontSize: "15px" }}>
-                    In order to get started, you can log the meeting details in
-                    the "New Meeting Log" section. You can also view your past
-                    meeting notes in the "My History" section.
+                    Log your mentor meeting notes in the <b>New Meeting Log</b>
+                    <br></br>
+                    section. You can also view your past entries in the{" "}
+                    <b>My History</b> section.
                   </p>
+                  <br></br>
                   <div>
                     <Link to="/new-meeting">
                       <button
@@ -201,6 +204,7 @@ function App() {
                         style={{
                           display: "inline-block",
                           fontSize: "10px",
+                          margin: "2px",
                           backgroundColor: "rgb(120, 130, 134)",
                         }}
                       >
@@ -213,6 +217,7 @@ function App() {
                         style={{
                           display: "inline-block",
                           fontSize: "10px",
+                          margin: "2px",
                           backgroundColor: "rgb(120, 130, 134)",
                         }}
                       >
