@@ -23,20 +23,21 @@ function Filter({ setQuery, userIdSubmit, name, setName }) {
 
   return (
     <div className="input-container">
-      <h2>Please enter your login details</h2>
-      <br></br>
-      <input
+       <div className="notes inner">
+       <h2>Please enter your login details</h2>
+       <br></br>
+      <input style={{align: "center"}}  class="form-control-homepage"
         placeholder="Student ID No."
         maxLength={4}
         onChange={(e) => setMemberId(e.target.value)}
         onKeyPress={handleKeyPress}
       ></input>
-      <input
+      <input class="form-control-homepage"
         onKeyPress={handleKeyPress}
         placeholder="Full Name"
         onChange={(e) => setUserNameText(e.target.value)}
       ></input>
-
+      </div>
       <button
         onClick={() => {
           if (memberId && userNameText) {
