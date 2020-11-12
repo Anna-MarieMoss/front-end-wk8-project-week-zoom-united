@@ -125,7 +125,7 @@ function App() {
                 </Link>
               </li>
               <li onClick={() => signOut()}>
-                <a href="#top" style={{ color: "#333", align: "right" }}>
+                <a href="/" style={{ color: "#333", align: "right" }}>
                   Sign Out
                 </a>
               </li>
