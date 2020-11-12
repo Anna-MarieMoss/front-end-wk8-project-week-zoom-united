@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import css from "../App/App.css"
+import css from "../App/App.css";
 // import Filter from "../Filter/index"
+const moment = require("moment");
 
 function Display({
   query,
@@ -34,52 +35,46 @@ function Display({
           return (
             <div className="notes inner">
               <div className="row">
-                <h2>Name: {JSON.stringify(userHistory.name)}</h2>
+                <h2>Name: {userHistory.name}</h2>
                 <br></br>
                 <p className="column">
                   <b>Date: </b>
-                  {JSON.stringify(userHistory.meeting_date)}
+                  {moment(userHistory.meeting_date).format("Do MMMM YYYY")}
                 </p>
                 <p className="column">
-                  <b>Week:</b>
-                   {JSON.stringify(userHistory.week_topic)}
+                  <b>Week: </b>
+                  {userHistory.week_topic}
                 </p>
               </div>
               <div className="row">
-              <br></br>
+                <br></br>
                 <p>
                   <h2>What are you working on?</h2>
-                  <br></br>
-                  {" "}
-                  {JSON.stringify(userHistory.summary)}
+                  <br></br> {userHistory.summary.replace(/['"]+/g, "")}
                 </p>
                 <br></br>
                 <p className="column">
                   <h2>What have you enjoyed?</h2>
-                  <br></br>
-                  {" "}
-                  {JSON.stringify(userHistory.wins)}
+                  <br></br> {userHistory.wins}
                 </p>
                 <br></br>
                 <p className="column">
                   <h2>What are you struggling with?</h2>
-                  <br></br>
-                  {" "}
-                  {JSON.stringify(userHistory.challenges)}
+                  <br></br> {userHistory.challenges}
                 </p>
               </div>
               <div className="row">
-              <br></br>
+                <br></br>
                 <p className="column">
-                  <h2>Upcoming goals:</h2> 
+                  <h2>Upcoming goals:</h2>
                   <br></br>
-                  {JSON.stringify(userHistory.goals)}
+                  {userHistory.goals}
                 </p>
                 <br></br>
                 <p className="column">
                   <h2>General career/industry advice:</h2>
                   <br></br>
-                  {JSON.stringify(userHistory.aspirations)}
+                  {userHistory.aspirations}
                 </p>
               </div>
               <div className="row">

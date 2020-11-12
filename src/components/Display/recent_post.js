@@ -1,4 +1,5 @@
 import React from "react";
+const moment = require("moment");
 
 function RecentPost({ postBody }) {
   const newPostData = JSON.parse(postBody);
@@ -10,33 +11,31 @@ function RecentPost({ postBody }) {
             <h4>Name: {newPostData.name}</h4>
             <p className="column">
               <b>Date: </b>
-              {JSON.stringify(newPostData.meeting_date)}
+              {moment(newPostData.meeting_date).format("Do MMMM YYYY")}
             </p>
             <p className="column">
-              <b>Week:</b> {JSON.stringify(newPostData.week_topic)}
+              <b>Week:</b> {newPostData.week_topic}
             </p>
           </div>
           <div className="row">
             <p>
-              <b>What are you working on?</b>{" "}
-              {JSON.stringify(newPostData.summary)}
+              <b>What are you working on?</b> {newPostData.summary}
             </p>
 
             <p className="column">
-              <b>What have you enjoyed?</b> {JSON.stringify(newPostData.wins)}
+              <b>What have you enjoyed?</b> {newPostData.wins}
             </p>
             <p className="column">
-              <b>What are you struggling with?</b>{" "}
-              {JSON.stringify(newPostData.challenges)}
+              <b>What are you struggling with?</b> {newPostData.challenges}
             </p>
           </div>
           <div className="row">
             <p className="column">
-              <b>Upcoming goals:</b> {JSON.stringify(newPostData.goals)}
+              <b>Upcoming goals:</b> {newPostData.goals}
             </p>
             <p className="column">
               <b>General career/industry advice:</b>
-              {JSON.stringify(newPostData.aspirations)}
+              {newPostData.aspirations}
             </p>
           </div>
         </div>
