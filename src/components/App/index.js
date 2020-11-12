@@ -173,6 +173,7 @@ function App() {
                 dateFilter={dateFilter}
                 isDateFilter={isDateFilter}
                 removeDateFilter={removeDateFilter}
+                name={name}
               />
             </Route>
             <Route path="/">
@@ -187,16 +188,16 @@ function App() {
               )}
               {userIdSubmit === false && (
                 <div className="notes inner">
-                  <h1>Welcome to your Meeting Log 📝</h1>
+                  <h1>Welcome to your SoC Meeting Log</h1>
                   <h2>{name}</h2>
                   <br></br>
                   <h2>Your homepage for reflection...</h2>
                   <br></br>
                   <p style={{ fontSize: "15px" }}>
-                    Log your mentor meeting notes in the <b>New Meeting Log</b>
+                    Log your mentor meeting notes in the <b>New Meeting Log</b>{" "}
+                    📝
                     <br></br>
-                    section. You can also view your past entries in the{" "}
-                    <b>My History</b> section.
+                    View your past entries in <b>My History</b> 📅
                   </p>
                   <br></br>
                   <div>
@@ -205,9 +206,10 @@ function App() {
                         id="links"
                         style={{
                           display: "inline-block",
-                          fontSize: "10px",
+                          fontSize: "12px",
                           margin: "2px",
-                          backgroundColor: "rgb(120, 130, 134)",
+                          width: "140px",
+                          backgroundColor: "#929694",
                         }}
                       >
                         New Meeting Log
@@ -218,9 +220,10 @@ function App() {
                         id="links"
                         style={{
                           display: "inline-block",
-                          fontSize: "10px",
+                          fontSize: "12px",
                           margin: "2px",
-                          backgroundColor: "rgb(120, 130, 134)",
+                          width: "140px",
+                          backgroundColor: "#929694",
                         }}
                       >
                         My History

@@ -45,14 +45,13 @@ body {
 }
 
 .quote {
-  background-color: rgb(109, 76, 109);
+  background-color: rgb(118, 90, 118);
   /* font-family: "Courgette", cursive; */
   text-align: center;
   color: snow;
-  text-shadow: 2px 2px rgb(120, 130, 134);
+  text-shadow: 0.5px 1px #d3bfbe7e;
   margin: auto;
   width: 100%;
-  border: 2px solid snow;
   padding: 15px;
   /* border-radius: 5%; */
 }
@@ -79,7 +78,7 @@ body {
   border-radius: 3%;
 }
 .nav-bar {
-  background-color: snow;
+  background-color: #e9e9eb;
   border: 1px solid rgb(120, 130, 134);
 }
 
@@ -113,7 +112,7 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: rgb(235, 173, 235);
+  background-color: #d3bfbe;
 }
 
 .active {
@@ -309,7 +308,7 @@ button {
   align-items: center;
   justify-content: center;
   padding: 0;
-  background: #ae3c33;
+  background: #60a798;
   font-size: 13px;
   color: #fff;
   text-transform: uppercase;
@@ -333,7 +332,7 @@ button:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #f11a09;
+  background: #77cebb;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
