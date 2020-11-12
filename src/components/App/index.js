@@ -20,6 +20,12 @@ function App() {
   const [dateFilter, setDateFilter] = useState(null);
   const [isDateFilter, setIsDateFilter] = useState(false);
 
+  function signOut() {
+    setUserIdSubmit(true);
+    setQuery(null);
+    setName("");
+  }
+
   function removeDateFilter() {
     setIsDateFilter(false);
     setDateFilter("1970-01-01");
@@ -103,7 +109,9 @@ function App() {
           </nav>
           <Switch>
             <Route path="/new-meeting">
-              {formSubmit && <Form onClickfn={addToPost} userId={query} />}
+              {formSubmit && (
+                <Form onClickfn={addToPost} userId={query} name={name} />
+              )}
               {formSubmit === false && (
                 <div>
                   <h2>Congrats! Meeting notes submitted ✅</h2>
@@ -141,10 +149,9 @@ function App() {
               )}
               {userIdSubmit === false && (
                 <div>
-                  <h2>Welcome {name} to your meeting log ✅</h2>
-                  <button onClick={() => setUserIdSubmit(true)}>
-                    Sign out
-                  </button>
+                  <h2>Welcome to your meeting log</h2>
+                  <h2>{name}</h2>
+                  <button onClick={() => signOut()}>Sign out</button>
                 </div>
               )}
             </Route>

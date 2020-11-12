@@ -4,6 +4,22 @@ import React, { useState } from "react";
 
 function Filter({ setQuery, userIdSubmit, name, setName }) {
   const [memberId, setMemberId] = useState("");
+  const [userNameText, setUserNameText] = useState("");
+
+  function clearLoginInput() {
+    Array.from(document.querySelectorAll("input")).forEach(
+      (input) => (input.value = "")
+    );
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter" && memberId && userNameText) {
+      setQuery(memberId);
+      setName(userNameText);
+      userIdSubmit();
+      clearLoginInput();
+    }
+  }
 
   return (
     <div className="input-container">
@@ -12,25 +28,26 @@ function Filter({ setQuery, userIdSubmit, name, setName }) {
       <input
         placeholder="Student ID No."
         maxLength={4}
-        value={memberId}
         onChange={(e) => setMemberId(e.target.value)}
+        onKeyPress={handleKeyPress}
       ></input>
       <input
-        placeholder="First & Last Name"
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        onKeyPress={handleKeyPress}
+        placeholder="Full Name"
+        onChange={(e) => setUserNameText(e.target.value)}
       ></input>
 
       <button
         onClick={() => {
-          if (memberId && name) {
+          if (memberId && userNameText) {
             setQuery(memberId);
+            setName(userNameText);
             userIdSubmit();
+            clearLoginInput();
           }
         }}
       >
-        click me
+        Sign In
       </button>
     </div>
   );
