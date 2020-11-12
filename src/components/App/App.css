@@ -296,6 +296,10 @@ button:hover:before {
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
 
+button:active {
+  transform: translateY(2px);
+}
+
 .checkbox {
   position: relative;
 }
