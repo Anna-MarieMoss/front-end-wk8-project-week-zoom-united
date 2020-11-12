@@ -122,8 +122,9 @@ textarea,
 select,
 button {
   font-family: "Muli-Regular";
-  color: #333;
+  color: #666;
   font-size: 13px;
+  width: auto;
 }
 
 p,
@@ -181,7 +182,7 @@ a:hover {
 }
 
 form {
-  width: 50%;
+  width: 100%;
   padding-left: 45px;
 }
 
@@ -189,8 +190,9 @@ form {
   display: flex;
 }
 .form-group .form-wrapper {
-  width: 50%;
+  width: 25%;
 }
+
 .form-group .form-wrapper:first-child {
   margin-right: 20px;
 }
@@ -211,7 +213,20 @@ form {
   padding: 0 20px;
   border-radius: 20px;
   font-family: "Muli-Bold";
-  background: none;
+  /* background: none; */
+  background-color: #fff;
+}
+
+.form-control2 {
+  border: 1px solid #ccc;
+  display: block;
+  /* width: 100%;
+  height: 40px; */
+  padding: 0 20px;
+  border-radius: 20px;
+  font-family: "Muli-Bold";
+  /* background: none; */
+  background-color: #fff;
 }
 .form-control:focus {
   border: 1px solid #ae3c33;

@@ -46,6 +46,7 @@ function Display({
 
   return (
     <div className="user-viewer">
+         <a id="top"></a>
       <p>Displaying Notes History for SOC Student {query}</p>
       {/* <Filter setQuery={setQuery} /> */}
       {isDateFilter === false && (
@@ -111,6 +112,9 @@ function Display({
               </div>
               <div className="row">
                 <p className="column">
+                <br></br>
+                <a href="#top">Return to Top of Page</a>
+                <br></br>
                   <button onClick={() => handleDelete(userHistory.id)}>
                     Delete
                   </button>
@@ -120,6 +124,7 @@ function Display({
           );
         })}
       </div>
+      <br></br>
       <h1>Filter Notes</h1>
       <br></br>
     </div>
