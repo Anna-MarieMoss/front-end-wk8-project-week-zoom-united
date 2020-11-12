@@ -80,6 +80,14 @@ function App() {
   }
 
   useEffect(() => {
+    if (name) {
+      document.title = `${name}'s SoC Log`;
+      return;
+    }
+    document.title = `My SoC Log`;
+  }, [name]);
+
+  useEffect(() => {
     async function addToDB() {
       const requestOptions = {
         method: "POST",
