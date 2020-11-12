@@ -12,6 +12,8 @@ function Form({ onClickfn, userId }) {
     aspirations: "",
   });
 
+  console.log(formData);
+
   function handleChange(event) {
     const name = event.target.name;
     const value = event.target.value;
