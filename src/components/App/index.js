@@ -153,8 +153,11 @@ function App() {
               {formSubmit === false && (
                 <div>
                   <h2>Congrats! Meeting notes submitted ✅</h2>
-                  <button onClick={() => setFormSubmit(true)}>
-                    Add another meeting log
+                  <button
+                    style={{ fontSize: "14px" }}
+                    onClick={() => setFormSubmit(true)}
+                  >
+                    New Log
                   </button>
                   <RecentPost postBody={postBody} />
                 </div>
