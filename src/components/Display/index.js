@@ -125,8 +125,6 @@ function Display({
         })}
       </div>
       <br></br>
-      <h1>Filter Notes</h1>
-      <br></br>
     </div>
   );
 }
