@@ -124,11 +124,13 @@ function App() {
                   My History{" "}
                 </Link>
               </li>
-              <li onClick={() => signOut()}>
-                <a href="/" style={{ color: "#333", align: "right" }}>
-                  Sign Out
-                </a>
-              </li>
+              {userIdSubmit === false && (
+                <li onClick={() => signOut()}>
+                  <a href="/" style={{ color: "#333", align: "right" }}>
+                    Sign Out
+                  </a>
+                </li>
+              )}
             </ul>
           </nav>
         </div>
