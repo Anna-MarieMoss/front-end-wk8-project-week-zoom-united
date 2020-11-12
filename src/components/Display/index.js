@@ -71,6 +71,7 @@ function Display({
           <button
             style={{
               backgroundColor: "rgb(120, 130, 134)",
+              fontSize: "12px",
             }}
             onClick={() => removeDateFilter()}
           >
