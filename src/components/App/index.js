@@ -21,6 +21,8 @@ function App() {
   const [dateFilter, setDateFilter] = useState(null);
   const [isDateFilter, setIsDateFilter] = useState(false);
 
+  console.log(dateFilter);
+
   function signOut() {
     setUserIdSubmit(true);
     setQuery(null);
@@ -33,8 +35,8 @@ function App() {
   }
 
   function filterHistoryDate(date) {
-    setDateFilter(date);
     setIsDateFilter(true);
+    setDateFilter(date);
   }
 
   function getRandomId() {
@@ -102,29 +104,45 @@ function App() {
       </button>
       <br></br> */}
       <Router className="link-header">
-        <div style={{width:"100%"}} className="App nav-bar">
+        <div style={{ width: "100%" }} className="App nav-bar">
           <nav>
-
-          <ul>
-            <li><Link style={{color: "#333"}} to="/">Home </Link></li>
-            <li><Link style={{color: "#333"}} to="/new-meeting"> New Meeting Log </Link></li>
-            <li><Link style={{color: "#333"}} to="/history"> My History </Link></li>
-            <li onClick={() => setUserIdSubmit(true)}><a href="#top" style={{color: "#333", align:"right"}}>Sign Out</a></li>
-          </ul>
-
+            <ul>
+              <li>
+                <Link style={{ color: "#333" }} to="/">
+                  Home{" "}
+                </Link>
+              </li>
+              <li>
+                <Link style={{ color: "#333" }} to="/new-meeting">
+                  {" "}
+                  New Meeting Log{" "}
+                </Link>
+              </li>
+              <li>
+                <Link style={{ color: "#333" }} to="/history">
+                  {" "}
+                  My History{" "}
+                </Link>
+              </li>
+              <li onClick={() => signOut()}>
+                <a href="#top" style={{ color: "#333", align: "right" }}>
+                  Sign Out
+                </a>
+              </li>
+            </ul>
           </nav>
-          </div>
-          <div>
-      <Quotes id={id} />
-      <button
-        className="button"
-        onClick={() => {
-          getRandomId();
-        }}
-      >
-        Inspire Me
-      </button>
-      <br></br>
+        </div>
+        <div>
+          <Quotes id={id} />
+          <button
+            className="button"
+            onClick={() => {
+              getRandomId();
+            }}
+          >
+            Inspire Me
+          </button>
+          <br></br>
           <Switch>
             <Route path="/new-meeting">
               {formSubmit && (
@@ -166,7 +184,6 @@ function App() {
                 />
               )}
               {userIdSubmit === false && (
-
                 <div className="notes inner">
                   <h1>Welcome {name} to your meeting log ✅</h1>
                   <br></br>
@@ -203,9 +220,6 @@ function App() {
                       </button>
                     </Link>
                   </div>
-                  <button onClick={() => setUserIdSubmit(true)}>
-                    Sign out
-                  </button>
                 </div>
               )}
               {/* <Calendar /> */}

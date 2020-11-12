@@ -46,12 +46,12 @@ function Display({
 
   return (
     <div className="user-viewer">
-         <a id="top"></a>
+      <a id="top"></a>
       <h2>Notes History for SOC Student {query}</h2>
       {/* <Filter setQuery={setQuery} /> */}
       {isDateFilter === false && (
         <div>
-        <br></br>
+          <br></br>
           <DateFilter filterHistoryDate={filterHistoryDate} />
           <br></br>
           <h2>Showing all notes ☑️</h2>
@@ -59,12 +59,20 @@ function Display({
       )}
       {isDateFilter && (
         <div>
-        <br></br>
+          <br></br>
           <h2>
             Showing all notes since {moment(dateFilter).format("YYYY-MM-DD")} 📅
           </h2>
           <br></br>
-          <button onClick={() => removeDateFilter()}>Remove Filter</button>
+          <button
+            style={{
+              backgroundColor: "rgb(120, 130, 134)",
+            }}
+            onClick={() => removeDateFilter()}
+          >
+            Remove Filter
+          </button>
+          <br></br>
         </div>
       )}
       <div>
@@ -116,9 +124,9 @@ function Display({
               </div>
               <div className="row">
                 <p className="column">
-                <br></br>
-                <a href="#top">Return to Top of Page</a>
-                <br></br>
+                  <br></br>
+                  <a href="#top">Return to Top of Page</a>
+                  <br></br>
                   <button onClick={() => handleDelete(userHistory.id)}>
                     Delete
                   </button>
