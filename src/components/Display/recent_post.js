@@ -1,13 +1,16 @@
 import React from "react";
+import css from "../App/App.css"
 
 function RecentPost({ postBody }) {
   const newPostData = JSON.parse(postBody);
   return (
     <div>
+    <br></br>
       {newPostData && (
-        <div className="notes">
+        <div className="notes inner">
           <div className="row">
-            <h4>Name: {newPostData.name}</h4>
+            <h2>Name: {newPostData.name}</h2>
+            <br></br>
             <p className="column">
               <b>Date: </b>
               {JSON.stringify(newPostData.meeting_date)}
@@ -17,25 +20,34 @@ function RecentPost({ postBody }) {
             </p>
           </div>
           <div className="row">
+          <br></br>
             <p>
-              <b>What are you working on?</b>{" "}
+              <h2>What are you working on?</h2>{" "}
+              <br></br>
               {JSON.stringify(newPostData.summary)}
             </p>
-
+            <br></br>
             <p className="column">
-              <b>What have you enjoyed?</b> {JSON.stringify(newPostData.wins)}
+              <b>What have you enjoyed?</b>
+              <br></br> 
+              {JSON.stringify(newPostData.wins)}
             </p>
             <p className="column">
-              <b>What are you struggling with?</b>{" "}
+              <h2>What are you struggling with?</h2>
+              <br></br>
+              {" "}
               {JSON.stringify(newPostData.challenges)}
             </p>
           </div>
           <div className="row">
             <p className="column">
-              <b>Upcoming goals:</b> {JSON.stringify(newPostData.goals)}
+              <h2>Upcoming goals:</h2> 
+              <br></br>
+              {JSON.stringify(newPostData.goals)}
             </p>
             <p className="column">
-              <b>General career/industry advice:</b>
+              <h2>General career/industry advice:</h2>
+              <br></br>
               {JSON.stringify(newPostData.aspirations)}
             </p>
           </div>
