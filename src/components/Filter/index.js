@@ -7,14 +7,16 @@ function Filter({ setQuery, userIdSubmit, name, setName }) {
 
   return (
     <div className="input-container">
-      <h2>Please enter your Student ID Number</h2>
+      <h2>Please enter your login details</h2>
       <br></br>
       <input
+        placeholder="Student ID No."
         maxLength={4}
         value={memberId}
         onChange={(e) => setMemberId(e.target.value)}
       ></input>
       <input
+        placeholder="First & Last Name"
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
