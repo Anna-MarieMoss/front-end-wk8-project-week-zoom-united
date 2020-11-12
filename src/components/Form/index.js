@@ -45,7 +45,7 @@ function Form({ onClickfn, userId, name }) {
             ></input> */}
             <label htmlFor="meeting_date">Select meeting date</label>
             <input
-              class="form-control"
+              className="form-control"
               onChange={(event) => handleChange(event)}
               placeholder="meeting_date"
               type="date"
@@ -54,7 +54,7 @@ function Form({ onClickfn, userId, name }) {
             <br></br>
             <label htmlFor="week_topic">Select the SoC week</label>
             <select
-              class="form-control"
+              className="form-control"
               id="week_topic"
               name="week_topic"
               onChange={(event) => handleChange(event)}
@@ -78,7 +78,7 @@ function Form({ onClickfn, userId, name }) {
           </div>
           <div>
             <textarea
-              class="form-control2"
+              className="form-control2"
               rows="4"
               cols="60"
               onChange={(event) => handleChange(event)}
@@ -88,7 +88,7 @@ function Form({ onClickfn, userId, name }) {
             ></textarea>
             <br></br>
             <textarea
-              class="form-control2"
+              className="form-control2"
               rows="4"
               cols="60"
               onChange={(event) => handleChange(event)}
@@ -99,7 +99,7 @@ function Form({ onClickfn, userId, name }) {
             <br></br>
 
             <textarea
-              class="form-control2"
+              className="form-control2"
               rows="4"
               cols="60"
               onChange={(event) => handleChange(event)}
@@ -110,7 +110,7 @@ function Form({ onClickfn, userId, name }) {
             <br></br>
 
             <textarea
-              class="form-control2"
+              className="form-control2"
               rows="4"
               cols="60"
               onChange={(event) => handleChange(event)}
@@ -121,7 +121,7 @@ function Form({ onClickfn, userId, name }) {
             <br></br>
 
             <textarea
-              class="form-control2"
+              className="form-control2"
               rows="4"
               cols="60"
               onChange={(event) => handleChange(event)}
