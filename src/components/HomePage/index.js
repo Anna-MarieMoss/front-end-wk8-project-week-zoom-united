@@ -1,11 +1,13 @@
-import css from "./HomePage.module.css";
+// import css from "./HomePage.module.css";
 import React from "react";
 function HomePage() {
   return (
-    <main className={css.main}>
-      <section className={css.section}>
+    <main >
+      <section >
         <div>
-          <h1>Zoom United Mentor App </h1>
+        <br></br>
+          <h1><b>Zoom United Mentor App</b> </h1>
+          <br></br>
         </div>
       </section>
     </main>

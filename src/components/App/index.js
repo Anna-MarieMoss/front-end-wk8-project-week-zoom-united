@@ -75,7 +75,8 @@ function App() {
       >
         Inspire Me
       </button>
-      <Router>
+      <br></br>
+      <Router className="link-header">
         <div className="App">
           <nav className="nav-bar">
             <Link to="/">Home </Link>
@@ -111,6 +112,11 @@ function App() {
               <Filter setQuery={setQuery} />
             </Route>
           </Switch>
+          {/* <nav className="nav-bar">
+            <Link to="/">Home - </Link>
+            <Link to="/new-meeting"> New Meeting Log - </Link>
+            <Link to="/history"> My History </Link>
+          </nav> */}
         </div>
       </Router>
       <br></br>
