@@ -1,11 +1,13 @@
+import "../App/App.css";
 import React from "react";
-import css from "../App/App.css"
+
+const moment = require("moment");
 
 function RecentPost({ postBody }) {
   const newPostData = JSON.parse(postBody);
   return (
     <div>
-    <br></br>
+      <br></br>
       {newPostData && (
         <div className="notes inner">
           <div className="row">
@@ -13,42 +15,39 @@ function RecentPost({ postBody }) {
             <br></br>
             <p className="column">
               <b>Date: </b>
-              {JSON.stringify(newPostData.meeting_date)}
+              {moment(newPostData.meeting_date).format("Do MMMM YYYY")}
             </p>
             <p className="column">
-              <b>Week:</b> {JSON.stringify(newPostData.week_topic)}
+              <b>Week:</b> {newPostData.week_topic}
             </p>
           </div>
           <div className="row">
-          <br></br>
+            <br></br>
             <p>
-              <h2>What are you working on?</h2>{" "}
-              <br></br>
-              {JSON.stringify(newPostData.summary)}
+              <h2>What are you working on?</h2> <br></br>
+              {newPostData.summary}
             </p>
             <br></br>
             <p className="column">
               <b>What have you enjoyed?</b>
-              <br></br> 
-              {JSON.stringify(newPostData.wins)}
+              <br></br>
+              {newPostData.wins}
             </p>
             <p className="column">
               <h2>What are you struggling with?</h2>
-              <br></br>
-              {" "}
-              {JSON.stringify(newPostData.challenges)}
+              <br></br> {newPostData.challenges}
             </p>
           </div>
           <div className="row">
             <p className="column">
-              <h2>Upcoming goals:</h2> 
+              <h2>Upcoming goals:</h2>
               <br></br>
-              {JSON.stringify(newPostData.goals)}
+              {newPostData.goals}
             </p>
             <p className="column">
               <h2>General career/industry advice:</h2>
               <br></br>
-              {JSON.stringify(newPostData.aspirations)}
+              {newPostData.aspirations}
             </p>
           </div>
         </div>

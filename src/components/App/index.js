@@ -7,7 +7,7 @@ import HomePage from "../HomePage";
 import Form from "../Form";
 import RecentPost from "../Display/recent_post";
 import Filter from "../Filter/index";
-const moment = require("moment");
+
 
 function App() {
   const [id, setId] = useState("");
