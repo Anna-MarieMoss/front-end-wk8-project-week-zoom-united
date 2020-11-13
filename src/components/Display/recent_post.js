@@ -29,26 +29,31 @@ function RecentPost({ postBody }) {
             </p>
             <br></br>
             <p className="column">
-              <b>What have you enjoyed?</b>
+              <h2>What have you enjoyed?</h2>
               <br></br>
               {newPostData.wins}
+              <br></br>
             </p>
+            <br></br>
             <p className="column">
               <h2>What are you struggling with?</h2>
               <br></br> {newPostData.challenges}
             </p>
           </div>
+          <br></br>
           <div className="row">
             <p className="column">
               <h2>Upcoming goals:</h2>
               <br></br>
               {newPostData.goals}
             </p>
+            <br></br>
             <p className="column">
               <h2>General career/industry advice:</h2>
               <br></br>
               {newPostData.aspirations}
             </p>
+            <br></br>
           </div>
         </div>
       )}
