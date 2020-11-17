@@ -11,6 +11,7 @@ function Quotes({ id, url }) {
       setNewQuote(payload[0].quote);
     }
     getRandomQuote();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (

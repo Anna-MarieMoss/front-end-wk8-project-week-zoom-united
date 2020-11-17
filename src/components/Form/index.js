@@ -25,8 +25,8 @@ function Form({ onClickfn, userId, name }) {
       <h2>My Mentor Meeting Log</h2>
       <br></br>
       <form>
-        <div class="form-group">
-          <div class="form-wrapper">
+        <div className="form-group">
+          <div className="form-wrapper">
             <h4>User ID: {userId}</h4>
             <h4>Name: {name}</h4>
             <br></br>
@@ -37,7 +37,7 @@ function Form({ onClickfn, userId, name }) {
               name="user_id"
             ></input> */}
             {/* <input
-              class="form-control"
+              className="form-control"
               onChange={(event) => handleChange(event)}
               placeholder="name"
               type="text"

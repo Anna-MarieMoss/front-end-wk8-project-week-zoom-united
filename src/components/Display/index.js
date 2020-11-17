@@ -42,7 +42,8 @@ function Display({
       setUserHistory(payload);
     }
     dateFilter && getUserDate();
-  }, [dateFilter, query, setUserHistory, url]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dateFilter, query]);
 
   return (
     <div className="user-viewer">
@@ -73,7 +74,7 @@ function Display({
             }}
             onClick={() => removeDateFilter()}
           >
-            Remove Filter
+            Remove Filter`
           </button>
           <br></br>
         </div>

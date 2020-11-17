@@ -62,6 +62,7 @@ function App() {
       setDeleteId(null);
     }
     deleteId && deleteFromDB();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deleteId]);
 
   function addToPost(formData) {
@@ -97,6 +98,7 @@ function App() {
       fetch(`${url}/notes/`, requestOptions);
     }
     postBody && addToDB();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [postBody]);
 
   return (
