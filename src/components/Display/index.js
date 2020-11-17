@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../App/App.css";
 import DateFilter from "./dateFilter";
 
@@ -32,7 +32,7 @@ function Display({
       setUserHistory(payload);
     }
     getUser();
-  }, [query, deleteId]);
+  }, [query, deleteId, url, setUserHistory]);
 
   useEffect(() => {
     async function getUserDate() {
@@ -42,11 +42,10 @@ function Display({
       setUserHistory(payload);
     }
     dateFilter && getUserDate();
-  }, [dateFilter]);
+  }, [dateFilter, query, setUserHistory, url]);
 
   return (
     <div className="user-viewer">
-      <a id="top"></a>
       <h2>
         Notes History for {name} {query}
       </h2>
