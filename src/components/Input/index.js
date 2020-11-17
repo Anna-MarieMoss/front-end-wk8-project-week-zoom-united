@@ -13,11 +13,12 @@ function BootCamperRecord({
   isDateFilter,
   removeDateFilter,
   name,
+  url,
 }) {
   const [note, setNote] = useState([]);
   useEffect(() => {
     async function getAllNotes() {
-      const res = await fetch(`http://localhost:5000/notes`);
+      const res = await fetch(`${url}/notes`);
 
       const data = await res.json();
       const { payload } = data;
@@ -40,6 +41,7 @@ function BootCamperRecord({
         isDateFilter={isDateFilter}
         removeDateFilter={removeDateFilter}
         name={name}
+        url={url}
       />
       {/* {note.map((note) => {
         return (

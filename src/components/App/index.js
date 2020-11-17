@@ -21,7 +21,7 @@ function App() {
   const [dateFilter, setDateFilter] = useState(null);
   const [isDateFilter, setIsDateFilter] = useState(false);
 
-  console.log(dateFilter);
+  const url = process.env.REACT_APP_BACK_END || "http://localhost:5000";
 
   function signOut() {
     setUserIdSubmit(true);
@@ -58,7 +58,7 @@ function App() {
         method: "DELETE",
       };
       console.log(requestOptions);
-      fetch(`http://localhost:5000/notes/${deleteId}`, requestOptions);
+      fetch(`${url}/notes/${deleteId}`, requestOptions);
       setDeleteId(null);
     }
     deleteId && deleteFromDB();
@@ -94,7 +94,7 @@ function App() {
         headers: { "Content-Type": "application/json" },
         body: postBody,
       };
-      fetch(`http://localhost:5000/notes/`, requestOptions);
+      fetch(`${url}/notes/`, requestOptions);
     }
     postBody && addToDB();
   }, [postBody]);
@@ -143,7 +143,7 @@ function App() {
           </nav>
         </div>
         <div>
-          <Quotes id={id} />
+          <Quotes id={id} url={url} />
           <button
             className="button"
             onClick={() => {
@@ -185,6 +185,7 @@ function App() {
                 isDateFilter={isDateFilter}
                 removeDateFilter={removeDateFilter}
                 name={name}
+                url={url}
               />
             </Route>
             <Route path="/">

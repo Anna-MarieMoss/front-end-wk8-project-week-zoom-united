@@ -17,6 +17,7 @@ function Display({
   isDateFilter,
   removeDateFilter,
   name,
+  url,
 }) {
   // const [userHistory,setUserHistory] = useState([])
   // const [query, setQuery] = useState(null)
@@ -25,7 +26,7 @@ function Display({
 
   useEffect(() => {
     async function getUser() {
-      const res = await fetch(`http://localhost:5000/notes/${query}`);
+      const res = await fetch(`${url}/notes/${query}`);
       const data = await res.json();
       const { payload } = data;
       setUserHistory(payload);
@@ -35,9 +36,7 @@ function Display({
 
   useEffect(() => {
     async function getUserDate() {
-      const res = await fetch(
-        `http://localhost:5000/notes/${query}?date=${dateFilter}`
-      );
+      const res = await fetch(`${url}/notes/${query}?date=${dateFilter}`);
       const data = await res.json();
       const { payload } = data;
       setUserHistory(payload);
