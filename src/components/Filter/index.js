@@ -28,7 +28,7 @@ function Filter({ setQuery, userIdSubmit, name, setName }) {
         <br></br>
         <input
           style={{ width: "50%" }}
-          class="form-control-homepage"
+          className="form-control-homepage"
           placeholder="Student ID No."
           maxLength={4}
           onChange={(e) => setMemberId(e.target.value)}
@@ -37,7 +37,7 @@ function Filter({ setQuery, userIdSubmit, name, setName }) {
         <br></br>
         <input
           style={{ width: "50%" }}
-          class="form-control-homepage"
+          className="form-control-homepage"
           onKeyPress={handleKeyPress}
           placeholder="Full Name"
           onChange={(e) => setUserNameText(e.target.value)}

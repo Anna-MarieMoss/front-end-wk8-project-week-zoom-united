@@ -16,6 +16,7 @@ function BootCamperRecord({
   url,
 }) {
   const [note, setNote] = useState([]);
+  console.log(note);
   useEffect(() => {
     async function getAllNotes() {
       const res = await fetch(`${url}/notes`);
@@ -25,6 +26,7 @@ function BootCamperRecord({
       setNote(payload);
     }
     getAllNotes();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
