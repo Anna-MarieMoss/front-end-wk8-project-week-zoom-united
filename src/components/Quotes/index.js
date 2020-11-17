@@ -5,7 +5,7 @@ function Quotes({ id, url }) {
 
   useEffect(() => {
     async function getRandomQuote() {
-      const res = await fetch(`${url}quotes/${id}`);
+      const res = await fetch(`${url}/quotes/${id}`);
       const data = await res.json();
       const { payload } = data;
       setNewQuote(payload[0].quote);
