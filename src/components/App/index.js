@@ -10,7 +10,7 @@ import Filter from "../Filter/index";
 // import Calendar from "../Calendar";
 
 function App() {
-  const [id, setId] = useState("");
+  const [id, setId] = useState(Math.floor(Math.random() * 10) + 1);
   const [userHistory, setUserHistory] = useState([]);
   const [query, setQuery] = useState(null);
   const [postBody, setPostBody] = useState();
