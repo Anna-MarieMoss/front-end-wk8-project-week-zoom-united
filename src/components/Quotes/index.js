@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-function Quotes({ id }) {
+function Quotes({ id, url }) {
   const [newQuote, setNewQuote] = useState();
 
   useEffect(() => {
     async function getRandomQuote() {
-      const res = await fetch(`http://localhost:5000/quotes/${id}`);
+      const res = await fetch(`${url}/quotes/${id}`);
       const data = await res.json();
       const { payload } = data;
       setNewQuote(payload[0].quote);
     }
     getRandomQuote();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
